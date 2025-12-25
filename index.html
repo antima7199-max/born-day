@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aadi's Birthday Countdown 🎂</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 2.2em;
+    }
+
+    .container {
+      background: rgba(255,255,255,0.25);
+      padding: 25px;
+      margin: 20px auto;
+      border-radius: 20px;
+      max-width: 420px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+
+    .time {
+      background: white;
+      color: #ff4d6d;
+      padding: 12px;
+      border-radius: 12px;
+      width: 22%;
+      font-weight: bold;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      margin-top: 10px;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 15px;
+      margin-top: 10px;
+    }
+
+    .quote {
+      font-style: italic;
+      margin-top: 15px;
+      font-size: 1em;
+    }
+
+    footer {
+      margin: 20px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>🎉 Aadi's Birthday 🎉</h1>
+  <p>30 December 💖</p>
+
+  <div class="container">
+    <h2>Countdown Begins</h2>
+    <div class="countdown">
+      <div class="time"><span id="days">0</span><br>Days</div>
+      <div class="time"><span id="hours">0</span><br>Hours</div>
+      <div class="time"><span id="minutes">0</span><br>Minutes</div>
+      <div class="time"><span id="seconds">0</span><br>Seconds</div>
+    </div>
+  </div>
+
+  <div class="container gallery">
+    <h2>📸 Memories</h2>
+    <img src="https://via.placeholder.com/400x250?text=Your+Photo+1">
+    <img src="https://via.placeholder.com/400x250?text=Your+Photo+2">
+  </div>
+
+  <div class="container">
+    <h2>🎥 Video Message</h2>
+    <video controls>
+      <source src="" type="video/mp4">
+      Your browser does not support video.
+    </video>
+    <p>(You can add video later)</p>
+  </div>
+
+  <div class="container">
+    <h2>💌 For You</h2>
+    <p class="quote">“Some people make the world brighter just by being in it — you are one of them, Aadi.”</p>
+    <p class="quote">“Counting days not for a date, but for the smile it brings.”</p>
+  </div>
+
+  <footer>
+    Made with 💖 just for you
+  </footer>
+
+  <script>
+    const birthday = new Date("December 30, 2025 00:00:00").getTime();
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const diff = birthday - now;
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const m = Math.floor((diff / (1000 * 60)) % 60);
+      const s = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("days").innerHTML = d;
+      document.getElementById("hours").innerHTML = h;
+      document.getElementById("minutes").innerHTML = m;
+      document.getElementById("seconds").innerHTML = s;
+    }, 1000);
+  </script>
+
+</body>
+</html>
